@@ -15,22 +15,13 @@ import java.util.List;
 @RestController()
 public class UserController {
     @Autowired
-    private JdbcTemplate jdbcTemplate;
-    @Autowired
     ItemService itemService;
 
     @JsonSerialize
-    @RequestMapping(path = "/user", method = RequestMethod.GET)
-    public List<Item> getProduct() {
-
-        List<Item>  items =  itemService.addNewItem();
-
+    @RequestMapping(path = "/items", method = RequestMethod.GET)
+    public List<Item> getItems() {
+        List<Item> items = itemService.getAllItems();
         return items;
 
-    }
-
-    class User {
-        String firstName;
-        String LastName;
     }
 }

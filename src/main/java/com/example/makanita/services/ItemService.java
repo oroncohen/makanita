@@ -14,7 +14,12 @@ public class ItemService {
     private ItemDao itemDao;
 
     public List<Item> addNewItem(){
-//        itemDao.addItemToDb();
+        itemDao.addItemToDb();
         return itemDao.getAll();
     }
+
+    public List<Item> getAllItems(){
+        return itemDao.getAll();
+    }
+
 }
